@@ -5,8 +5,8 @@
     padding: 0;
 }
 
-/* TIPOGRAFIA_GOOGLEFONTS */
 
+/* TIPOGRAFIA_GOOGLEFONTS */
 /* VARIABLES */
 :root {
     --color-acento: #19E631;
@@ -25,6 +25,7 @@ body {
     background: var(--color-claro);
     color: var(--color-oscuro);
 }
+
 
 /* CINTA */
 .cinta {
@@ -80,6 +81,7 @@ body {
     width: 1.1rem;
     display: block;
 }
+
 
 /* MENU */
 .menu {
@@ -143,7 +145,6 @@ body {
     text-decoration: underline;
 }
 
-/* HERO */
 
 /* HERO */
 .hero {
@@ -185,3 +186,417 @@ body {
 
 
 
+
+/* MERCHANDISING */
+.merch {
+    padding: 4rem 7.5rem 6rem 7.5rem;
+    background-color: var(--color-claro);
+    text-align: center;
+}
+
+.merch__cabecera {
+    margin-bottom: 3.5rem;
+}
+
+.merch__titulo {
+    font-size: 0.9rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.4rem;
+}
+
+.merch__subtitulo {
+    font-size: 0.7rem;
+    color: #555555;
+}
+
+/* 3 columnas */
+.merch__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 68rem;
+    margin: 0 auto;
+    align-items: stretch; 
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* fotos con flechas verdes */
+.producto__visor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 18rem;
+    height: 17rem;
+    margin-bottom: 1.5rem;
+}
+
+.visor__imagenes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visor__img {
+    display: none;
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.visor__img.activa {
+    display: block;
+}
+
+.visor__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.visor__btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.visor__btn--prev {
+    left: 0;
+}
+
+.visor__btn--next {
+    right: 0;
+}
+
+/* textos y botones de cada camiseta */
+.producto__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 15rem;
+    width: 100%;
+    flex: 1;
+}
+
+.producto__nombre {
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.15rem;
+}
+
+.producto__tipo {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Corazón de favorito */
+.btn-fav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0;
+}
+
+.btn-fav i {
+    color: #ffffff;
+    -webkit-text-stroke: 1.2px #000000;
+    transition: color 0.2s ease;
+}
+
+.btn-fav i.activo {
+    color: var(--color-acento) !important;
+    -webkit-text-stroke: 0px transparent;
+}
+
+/* descripción del producto */
+.producto__desc {
+    font-size: 0.65rem;
+    line-height: 1.35;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* talla */
+.producto__talla {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 1.4rem;
+    font-size: 0.7rem;
+}
+
+.producto__talla select {
+    border: 1px solid var(--color-oscuro);
+    background-color: transparent;
+    padding: 0.15rem 0.4rem;
+    font-family: inherit;
+    font-size: 0.7rem;
+    min-width: 3.8rem;
+    cursor: pointer;
+    outline: none;
+}
+
+/* añadir a la cesta */
+.producto__boton {
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: var(--bold);
+    border: none;
+    border-radius: 3px;
+    padding: 0.65rem 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.producto__boton:hover {
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+}
+
+
+
+/* BOTONES FLOTANTES */
+/* Cuadrado negro con corazón verde */
+.btn-flotante-fav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+
+/* Botón redondo verde que lleva a la Home */
+.btn-flotante-home {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 6rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 90;
+    transition: transform 0.2s ease;
+}
+
+.btn-flotante-home:hover {
+    transform: scale(1.1);
+}
+
+.btn-flotante-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+/* FOOTER ESCRITORIO */
+.footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: 3.5rem 7.5rem 2rem 7.5rem;
+}
+
+.footer__columnas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 55rem;
+    margin-bottom: 4rem;
+}
+
+.footer__titulo {
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.9rem;
+    color: var(--color-claro);
+}
+
+.footer__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__lista li {
+    margin-bottom: 0.35rem;
+}
+
+.footer__lista a,
+.footer__info {
+    font-size: 0.7rem;
+    color: #cccccc;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.footer__lista a:hover {
+    color: var(--color-acento);
+}
+
+/* Parte inferior del footer */
+.footer__inferior {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.footer__centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer__redes {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.footer__redes a {
+    color: var(--color-claro);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__redes a:hover {
+    color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.footer__copy {
+    font-size: 0.65rem;
+    color: #999999;
+}
+
+.footer__isotipo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.footer__isotipo img {
+    width: 2.2rem;
+    height: auto;
+    display: block;
+}
+
+
+
+/* RESPONSIVE */
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 3rem 3.5rem 2rem 3.5rem;
+    }
+
+    .footer__columnas {
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    .merch {
+        padding: 3.5rem 3.5rem 5rem 3.5rem;
+    }
+
+    .merch__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+    .footer {
+        padding: 2.5rem 1.2rem 1.5rem 1.2rem;
+    }
+
+    .footer__columnas {
+        grid-template-columns: repeat(4, 1fr); /* Mantiene las 4 columnas como en tu diseño móvil */
+        gap: 0.6rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer__titulo {
+        font-size: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer__lista a,
+    .footer__info {
+        font-size: 0.55rem;
+        line-height: 1.3;
+    }
+
+    .footer__redes {
+        gap: 0.7rem;
+    }
+
+    .footer__redes a {
+        font-size: 0.75rem;
+    }
+
+    .footer__copy {
+        font-size: 0.55rem;
+    }
+
+    .footer__isotipo img {
+        width: 1.6rem;
+    }
+
+    .merch {
+        padding: 3rem 1.5rem 4rem 1.5rem;
+    }
+
+    .merch__grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .producto__desc {
+        min-height: auto;
+    }
+}
