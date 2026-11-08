@@ -25,6 +25,25 @@ $(document).ready(function () {
 
 });
 
+    // HAMBURGUESA
+
+$(".menu-btn").on("click", function () {
+
+    $(".menu").slideToggle();
+    $(this).toggleClass("abierto");
+
+})
+
+$(window).on("resize", function () {
+
+    if ($(window).width() > 600) {
+        $(".menu").removeAttr("style");
+    }
+
+})
+
+
+
 // ACORDEON
 $(".acordeon__titulo").on("click", function () {
 
