@@ -322,6 +322,36 @@ body {
     color: var(--color-acento);
 }
 
+
+/* BOTON FLOTANTE VERDE */
+
+.btn-flotante-home {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 6rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 90;
+    transition: transform 0.2s ease;
+}
+
+.btn-flotante-home:hover {
+    transform: scale(1.1);
+}
+
+.btn-flotante-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 /* FOOTER ESCRITORIO */
 .footer {
     background-color: var(--color-oscuro);
