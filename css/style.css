@@ -26,12 +26,66 @@ body {
     color: var(--color-oscuro);
 }
 
+/* CINTA */
+.cinta {
+    background: var(--color-acento);
+    overflow: hidden;          
+    padding: 0.75rem 0;
+}
+
+.cinta-texto {
+    display: flex;
+    gap: 1.5rem;              
+    width: max-content;       
+    white-space: nowrap;      
+    animation: desplazar 20s linear infinite;
+}
+
+.cinta-texto span {
+    font-size: 0.75rem;
+}
+
+    /* ANIMACION DE LA CINTA */
+@keyframes desplazar {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* CABECERA */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.8rem 7.5rem;
+    background: var(--color-acento);
+}
+
+.cabecera__logo img {
+    width: 6.875rem;
+    display: block;
+    margin-top: -1.5rem;  
+}
+
+.cabecera__iconos {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.cabecera__iconos img {
+    width: 1.1rem;
+    display: block;
+}
 
 /* MENU */
 .menu {
     display: flex;
     align-items: flex-start;
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .menu__item {
@@ -44,7 +98,7 @@ body {
     border: none;
     padding: 0;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 0.8rem;
     color: var(--color-oscuro);
     cursor: pointer;
 }
@@ -56,7 +110,7 @@ body {
 .menu__titulo::after {
     content: "▾";
     display: inline-block;
-    margin-left: 6px;
+    margin-left: 0.3rem;
     transition: transform 0.3s;
 }
 
@@ -66,31 +120,67 @@ body {
 
 .menu__contenido {
     display: none;
-    padding-top: 6px;
+    padding-top: 0.3rem;
 }
 
 .menu__contenido a {
     display: block;
-    font-size: 12px;
+    font-size: 0.7rem;
     line-height: 1.5;
     color: var(--color-oscuro);
     text-decoration: none;
 }
 
 .menu__enlace {
-    font-size: 14px;
+    font-size: 0.8rem;
     color: var(--color-oscuro);
     text-decoration: none;
-}
-
-.menu__enlace--activo {
-    text-decoration: underline;
 }
 
 .menu__enlace:hover,
 .menu__contenido a:hover,
 .menu__titulo:hover {
     text-decoration: underline;
+}
+
+/* HERO */
+
+/* HERO */
+.hero {
+    background: var(--color-acento);
+    padding: 5rem 18rem 6rem;
+}
+
+.hero__marca {
+    font-size: 1.25rem;
+}
+
+.hero__titulo {
+    font-size: 2.5rem;
+    font-weight: var(--bold);
+    margin: 0.5rem 0 1rem;
+}
+
+.hero__texto {
+    font-size: 1.25rem;
+    max-width: 28rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero__boton {
+    display: inline-block;
+    background: var(--color-oscuro);
+    color: var(--color-acento);
+    font-size: 1.125rem;
+    font-weight: var(--bold);
+    padding: 0.875rem 1rem;
+    text-decoration: none;
+}
+
+.hero__boton:hover {
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+    outline: 2px solid var(--color-oscuro);
 }
 
 
