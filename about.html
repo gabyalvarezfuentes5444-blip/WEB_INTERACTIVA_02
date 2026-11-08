@@ -109,6 +109,45 @@
 
     </section>
 
+    <!-- FORMULARIO -->
+    <section class="contacto">
+        <h2 class="contacto__titulo">Contacte con nosotros</h2>
+
+        <form class="contacto__form" action="#">
+
+            <div class="contacto__campo">
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="asunto">
+                    <option value=""></option>
+                    <option value="pedido">Pedido</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="devoluciones">Cambios o devoluciones</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="contacto__campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="contacto__campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+            </div>
+
+            <div class="contacto__check">
+                <input type="checkbox" id="condiciones" name="condiciones">
+                <label for="condiciones">Acepto las condiciones generales y la política de confidencialidad</label>
+            </div>
+
+            <button type="submit" class="contacto__boton">Enviar</button>
+
+        </form>
+    </section>
+
+
+
     </main>
 
 
