@@ -5,8 +5,9 @@
     padding: 0;
 }
 
-/* TIPOGRAFIA_GOOGLEFONTS */
 
+
+/* TIPOGRAFIA_GOOGLEFONTS */
 /* VARIABLES */
 :root {
     --color-acento: #19E631;
@@ -25,6 +26,8 @@ body {
     background: var(--color-claro);
     color: var(--color-oscuro);
 }
+
+
 
 /* CINTA */
 .cinta {
@@ -56,6 +59,7 @@ body {
 }
 
 
+
 /* CABECERA */
 .cabecera {
     display: flex;
@@ -80,6 +84,8 @@ body {
     width: 1.1rem;
     display: block;
 }
+
+
 
 /* MENU */
 .menu {
@@ -143,7 +149,8 @@ body {
     text-decoration: underline;
 }
 
-/* HERO */
+
+
 
 /* HERO */
 .hero {
@@ -181,4 +188,156 @@ body {
     background: var(--color-acento);
     color: var(--color-oscuro);
     outline: 2px solid var(--color-oscuro);
+}
+
+
+
+/* FOOTER ESCRITORIO */
+.footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: 3.5rem 7.5rem 2rem 7.5rem;
+}
+
+.footer__columnas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 55rem;
+    margin-bottom: 4rem;
+}
+
+.footer__titulo {
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.9rem;
+    color: var(--color-claro);
+}
+
+.footer__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__lista li {
+    margin-bottom: 0.35rem;
+}
+
+.footer__lista a,
+.footer__info {
+    font-size: 0.7rem;
+    color: #cccccc;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.footer__lista a:hover {
+    color: var(--color-acento);
+}
+
+/* Parte inferior del footer */
+.footer__inferior {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.footer__centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer__redes {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.footer__redes a {
+    color: var(--color-claro);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__redes a:hover {
+    color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.footer__copy {
+    font-size: 0.65rem;
+    color: #999999;
+}
+
+.footer__isotipo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.footer__isotipo img {
+    width: 2.2rem;
+    height: auto;
+    display: block;
+}
+
+
+
+/* RESPONSIVE */
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 3rem 3.5rem 2rem 3.5rem;
+    }
+
+    .footer__columnas {
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+    .footer {
+        padding: 2.5rem 1.2rem 1.5rem 1.2rem;
+    }
+
+    .footer__columnas {
+        grid-template-columns: repeat(4, 1fr); /* Mantiene las 4 columnas como en tu diseño móvil */
+        gap: 0.6rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer__titulo {
+        font-size: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer__lista a,
+    .footer__info {
+        font-size: 0.55rem;
+        line-height: 1.3;
+    }
+
+    .footer__redes {
+        gap: 0.7rem;
+    }
+
+    .footer__redes a {
+        font-size: 0.75rem;
+    }
+
+    .footer__copy {
+        font-size: 0.55rem;
+    }
+
+    .footer__isotipo img {
+        width: 1.6rem;
+    }
 }
