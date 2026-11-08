@@ -183,5 +183,59 @@ body {
     outline: 2px solid var(--color-oscuro);
 }
 
+/* ACORDEON */
+.acordeon {
+    background: var(--color-acento);
+    border-top: 2px solid var(--color-oscuro);
+}
+
+.acordeon__item {
+    border-bottom: 2px solid var(--color-oscuro);
+}
+
+.acordeon__titulo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;   /* texto a la izquierda, flecha a la derecha */
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--color-oscuro);
+    text-align: left;
+    cursor: pointer;
+}
+
+.acordeon__titulo:focus {
+    outline: none;
+}
+
+/* Flecha */
+.acordeon__titulo::after {
+    content: "▾";
+    display: inline-block;      
+    transition: transform 0.3s; 
+}
+
+/* Cuando está abierto, el título en negrita */
+.acordeon__titulo.abierto {
+    font-weight: var(--bold);
+}
+
+/* Cuando abre la flecha gira */
+.acordeon__titulo.abierto:after {
+    transform: rotate(180deg);
+}
+
+.acordeon__contenido {
+    display: none;
+    padding: 0 2rem 1rem;
+    font-size: 0.8rem;
+}
+
+
+
 
 
