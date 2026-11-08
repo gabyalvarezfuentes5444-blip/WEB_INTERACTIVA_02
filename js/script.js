@@ -1,5 +1,3 @@
-// MENU 
-
 $(document).ready(function () {
 
     // ACORDEÓN DEL MENÚ
@@ -8,12 +6,18 @@ $(document).ready(function () {
         $(this).next().slideToggle("fast");
     });
 
-    // CORAZÓN DE FAVORITOS
+    // cORAZÓN DE FAVORITOS
     $(".btn-fav").on("click", function () {
         $(this).find("i").toggleClass("activo");
+
+        if ($(".btn-fav i.activo").length > 0) {
+            $("#carpeta-favoritos").fadeIn(200);
+        } else {
+            $("#carpeta-favoritos").fadeOut(200);
+        }
     });
 
-    // CAMBIAR FOTO DELANTERA /TRASERA DE CAMISETAs
+    // CAMBIAR FOTO DELANTERA A TRASERA
     $(".visor__btn").on("click", function () {
         $(this).parent().find(".visor__img").toggleClass("activa");
     });

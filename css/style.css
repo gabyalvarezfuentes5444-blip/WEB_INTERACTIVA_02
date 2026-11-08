@@ -328,11 +328,11 @@ body {
 .btn-fav i {
     color: #ffffff;
     -webkit-text-stroke: 1.2px #000000;
-    transition: color 0.2s ease, -webkit-text-stroke 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .btn-fav i.activo {
-    color: var(--color-acento);
+    color: var(--color-acento) !important;
     -webkit-text-stroke: 0px transparent;
 }
 
@@ -385,6 +385,52 @@ body {
 }
 
 
+
+/* BOTONES FLOTANTES */
+/* Cuadrado negro con corazón verde */
+.btn-flotante-fav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+
+/* Botón redondo verde que lleva a la Home */
+.btn-flotante-home {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 6rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: var(--color-acento);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 90;
+    transition: transform 0.2s ease;
+}
+
+.btn-flotante-home:hover {
+    transform: scale(1.1);
+}
+
+.btn-flotante-home img {
+    width: 1.6rem;
+    height: auto;
+    display: block;
+}
 
 
 
