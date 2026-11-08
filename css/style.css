@@ -184,6 +184,272 @@ body {
     outline: 2px solid var(--color-oscuro);
 }
 
+/* ACORDEON */
+.acordeon {
+    background: var(--color-acento);
+    border-top: 2px solid var(--color-oscuro);
+}
+
+.acordeon__item {
+    border-bottom: 2px solid var(--color-oscuro);
+}
+
+.acordeon__titulo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;   /* texto a la izquierda, flecha a la derecha */
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--color-oscuro);
+    text-align: left;
+    cursor: pointer;
+}
+
+.acordeon__titulo:focus {
+    outline: none;
+}
+
+/* Flecha */
+.acordeon__titulo::after {
+    content: "▾";
+    display: inline-block;      
+    transition: transform 0.3s; 
+}
+
+/* Cuando está abierto, el título en negrita */
+.acordeon__titulo.abierto {
+    font-weight: var(--bold);
+}
+
+/* Cuando abre la flecha gira */
+.acordeon__titulo.abierto:after {
+    transform: rotate(180deg);
+}
+
+.acordeon__contenido {
+    display: none;
+    padding: 0 2rem 1rem;
+    font-size: 0.8rem;
+}
+
+/* FORMULARIO */
+
+/* FORMULARIO */
+.contacto {
+    padding: 6rem 12%;
+}
+
+.contacto__titulo {
+    font-size: 1.1rem;
+    font-weight: var(--bold);
+    margin-bottom: 2rem;
+}
+
+.contacto__campo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.contacto__campo label {
+    font-size: 0.9rem;
+}
+
+.contacto__campo select,
+.contacto__campo input,
+.contacto__campo textarea {
+    width: 17rem;
+    height: 1.8rem;
+    border: 1px solid var(--color-oscuro);
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+}
+
+.contacto__campo textarea {
+    padding-top: 0.3rem;
+    resize: vertical;          /* Esto hace que se estire si se escribe mas de lo que se espera */
+}
+
+/* Casilla de condiciones */
+.contacto__check {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2rem 0 2.2rem;
+    font-size: 0.7rem;
+}
+
+.contacto__check input {
+    appearance: none;
+    width: 0.9rem;
+    height: 0.9rem;
+    background: transparent;              
+    border: 1px solid var(--color-oscuro);
+    cursor: pointer;
+    display: flex;                         
+    align-items: center;
+    justify-content: center;
+}
+.contacto__check input:checked {
+    background: var(--color-acento);
+}
+
+.contacto__check input:checked::after {
+    content: "✓";
+    font-size: 0.7rem;
+    font-weight: var(--bold);
+    color: var(--color-oscuro);
+}
+
+/* Botón */
+.contacto__boton {
+    background: var(--color-acento);
+    border: none;
+    padding: 0.6rem 1.3rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.contacto__boton:hover {
+    background: var(--color-oscuro);
+    color: var(--color-acento);
+}
+
+
+/* BOTON FLOTANTE VERDE */
+
+.btn-flotante-home {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 6rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 90;
+    transition: transform 0.2s ease;
+}
+
+.btn-flotante-home:hover {
+    transform: scale(1.1);
+}
+
+.btn-flotante-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* FOOTER ESCRITORIO */
+.footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: 3.5rem 7.5rem 2rem 7.5rem;
+}
+
+.footer__columnas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 55rem;
+    margin-bottom: 4rem;
+}
+
+.footer__titulo {
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.9rem;
+    color: var(--color-claro);
+}
+
+.footer__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__lista li {
+    margin-bottom: 0.35rem;
+}
+
+.footer__lista a,
+.footer__info {
+    font-size: 0.7rem;
+    color: #cccccc;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.footer__lista a:hover {
+    color: var(--color-acento);
+}
+
+/* Parte inferior del footer */
+.footer__inferior {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.footer__centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer__redes {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.footer__redes a {
+    color: var(--color-claro);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__redes a:hover {
+    color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.footer__copy {
+    font-size: 0.65rem;
+    color: #999999;
+}
+
+.footer__isotipo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.footer__isotipo img {
+    width: 2.2rem;
+    height: auto;
+    display: block;
+}
+
+
+
 
 
 

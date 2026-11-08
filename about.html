@@ -8,6 +8,9 @@
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
    <!-- CSS  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- ICONOS FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
 
@@ -39,7 +42,7 @@
             <!-- Tienda: funciona como un item de acordeón -->
             <div class="menu__item">
                 <button type="button" class="menu__titulo">
-                    Tienda <i class="fa-solid fa-caret-down"></i>
+                    Tienda 
                 </button>
                 <div class="menu__contenido">
                     <a href="vinilos.html">Vinilos</a>
@@ -109,7 +112,124 @@
 
     </section>
 
-    </main>
+    <!-- FORMULARIO -->
+    <section class="contacto">
+        <h2 class="contacto__titulo">Contacte con nosotros</h2>
+
+        <form class="contacto__form" action="#">
+
+            <div class="contacto__campo">
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="asunto">
+                    <option value=""></option>
+                    <option value="pedido">Pedido</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="devoluciones">Cambios o devoluciones</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="contacto__campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="contacto__campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+            </div>
+
+            <div class="contacto__check">
+                <input type="checkbox" id="condiciones" name="condiciones">
+                <label for="condiciones">Acepto las condiciones generales y la política de confidencialidad</label>
+            </div>
+
+            <button type="submit" class="contacto__boton">Enviar</button>
+
+        </form>
+    </section>
+
+     <!-- BOTÓN FLOTANTE DE IR A LA HOME -->
+    <a href="index.html" class="btn-flotante-home" aria-label="Ir a la Home">
+        <img src="MEDIA/IMG/Logo verde.png" alt="Home">
+     </a>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+   <!-- 4 Columnas -->
+   <div class="footer__columnas">
+       
+       <div class="footer__col">
+           <h3 class="footer__titulo">Productos</h3>
+           <ul class="footer__lista">
+               <li><a href="#">Novedades</a></li>
+               <li><a href="#">Nacional</a></li>
+               <li><a href="#">Internacional</a></li>
+               <li><a href="merch.html">Merchandising</a></li>
+               <li><a href="#">RSD</a></li>
+           </ul>
+       </div>
+
+       <div class="footer__col">
+           <h3 class="footer__titulo">Nuestra empresa</h3>
+           <ul class="footer__lista">
+               <li><a href="#">Envío</a></li>
+               <li><a href="#">Términos y condiciones</a></li>
+               <li><a href="#">Política de Privacidad</a></li>
+               <li><a href="#">Cambios y devoluciones</a></li>
+               <li><a href="#">Contacte con nosotros</a></li>
+               <li><a href="#">Mapa del sitio</a></li>
+           </ul>
+       </div>
+
+       <div class="footer__col">
+           <h3 class="footer__titulo">Su cuenta</h3>
+           <ul class="footer__lista">
+               <li><a href="#">Seguimiento del pedido</a></li>
+               <li><a href="#">Iniciar sesión</a></li>
+               <li><a href="#">Crear una cuenta</a></li>
+           </ul>
+       </div>
+
+       <div class="footer__col">
+           <h3 class="footer__titulo">Información de la tienda</h3>
+           <p class="footer__info">
+               Marilians Records<br>
+               España
+           </p>
+       </div>
+   </div>
+
+   <div class="footer__inferior">
+       <div class="footer__centro">
+           <div class="footer__redes">
+               <a href="https://www.facebook.com/mariliansrecords/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                   <i class="fa-brands fa-facebook-f"></i>
+               </a>
+               <a href="https://www.instagram.com/marilians_records/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                   <i class="fa-brands fa-instagram"></i>
+               </a>
+               <a href="https://www.tiktok.com/@marilians_records" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                   <i class="fa-brands fa-tiktok"></i>
+               </a>
+               <a href="https://x.com/MariliansR" target="_blank" rel="noopener noreferrer" aria-label="X">
+                   <i class="fa-brands fa-x-twitter"></i>
+               </a>
+               <a href="https://open.spotify.com/user/dfores78" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+                   <i class="fa-brands fa-spotify"></i>
+               </a>
+           </div>
+           <p class="footer__copy">© 2026 - Marilians Records SL</p>
+       </div>
+
+       <!-- Logo -->
+       <a href="index.html" class="footer__isotipo">
+           <img src="MEDIA/IMG/Logo footer.png" alt="Marilians">
+       </a>
+   </div>
+</footer>
 
 
 
