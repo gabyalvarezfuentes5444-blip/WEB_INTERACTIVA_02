@@ -1,11 +1,26 @@
 // MENU 
-
 $(document).ready(function () {
 
-    // Menú: al pulsar "Tienda" se abre/cierra Vinilos y Merch
-    $('.menu__titulo').on('click', function () {
-        $(this).next('.menu__contenido').slideToggle(300);
-        $(this).toggleClass('abierto');
+    // ACORDEÓN DEL MENÚ
+    $(".menu__titulo").on("click", function () {
+        $(this).toggleClass("abierto");
+        $(this).next().slideToggle("fast");
+    });
+
+    // cORAZÓN DE FAVORITOS
+    $(".btn-fav").on("click", function () {
+        $(this).find("i").toggleClass("activo");
+
+        if ($(".btn-fav i.activo").length > 0) {
+            $("#carpeta-favoritos").fadeIn(200);
+        } else {
+            $("#carpeta-favoritos").fadeOut(200);
+        }
+    });
+
+    // CAMBIAR FOTO DELANTERA A TRASERA
+    $(".visor__btn").on("click", function () {
+        $(this).parent().find(".visor__img").toggleClass("activa");
     });
 
 });
