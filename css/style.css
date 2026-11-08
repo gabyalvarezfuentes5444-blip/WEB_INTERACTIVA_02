@@ -143,6 +143,10 @@ body {
     text-decoration: underline;
 }
 
+.menu-btn {
+    display: none;
+}
+
 /* HERO */
 
 /* HERO */
@@ -447,6 +451,126 @@ body {
     display: block;
 }
 
+
+/* RESPONSIVE */
+
+    /* TABLET */
+@media (max-width: 1024px) {
+
+    .cabecera {
+        padding: 1.8rem 3rem;
+    }
+
+    .hero {
+        padding: 3rem 8% 4rem;
+    }
+
+    .contacto {
+        padding: 5rem 8%;
+    }
+
+}
+
+    /* CELULAR */
+
+@media (max-width: 600px) {
+
+    /* Cinta */
+    .cinta-texto span {
+        font-size: 0.65rem;
+    }
+
+    /* Cabecera: logo a la izquierda, iconos y hamburguesa a la derecha */
+    .cabecera {
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1.5rem 1.5rem;
+    }
+
+    .cabecera__logo {
+        order: 1;
+    }
+
+    .cabecera__iconos {
+        order: 2;
+        margin-left: auto;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .menu-btn {
+        order: 3;
+        display: block;
+        margin-left: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        color: var(--color-oscuro);
+        cursor: pointer;
+    }
+
+    .menu {
+        order: 4;
+        display: none;
+        width: 100%;
+        padding-top: 1.5rem;
+    }
+
+    .menu > a,
+    .menu__item {
+        display: block;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    .hero__titulo {
+        font-size: 1.3rem;
+    }
+
+    /* Acordeón */
+    .acordeon__titulo {
+        padding: 0.875rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .acordeon__contenido {
+        padding: 0 1rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    /* Formulario */
+    .contacto {
+        padding: 4rem 1.5rem 4rem 3.5rem;
+    }
+
+    .contacto__titulo {
+        font-size: 0.9rem;
+    }
+
+    .contacto__campo {
+        gap: 0.8rem;
+    }
+
+    .contacto__campo label {
+        font-size: 0.8rem;
+    }
+
+    .contacto__campo select,
+    .contacto__campo input,
+    .contacto__campo textarea {
+        width: 7.5rem;
+    }
+
+    .contacto__check {
+        font-size: 0.6rem;
+        max-width: 12rem;
+    }
+
+}
 
 
 
