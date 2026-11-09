@@ -75,7 +75,6 @@
         <p class="hero__texto">Tienda de discos de vinilo y espacio cultural independiente situada en Madrid</p>
         <a href="#fundadores" class="hero__boton">¿Quiénes somos?</a>
     </section>
-
     
     <!-- SLIDER -->
     <section class="slider">
@@ -97,6 +96,34 @@
 
     </section>
 
+    
+    <!-- VINILOS -->
+    <section class="vinilos">
+
+        <div class="filtros">
+            <button type="button" class="filtro is-activo" data-tipo="Todos">Todos</button>
+            <button type="button" class="filtro" data-tipo="Nacional">Nacional</button>
+            <button type="button" class="filtro" data-tipo="Internacional">Internacional</button>
+        </div>
+
+        <p id="contador" class="vinilos__contador"></p>
+
+        <!-- Aquí el JS pinta los discos -->
+        <div id="discos" class="discos"></div>
+
+    </section>
+
+    <!-- MODAL DE DISCO -->
+    <div id="modal" class="modal">
+        <div class="modal__caja">
+            <button type="button" id="modal-cerrar" class="modal__cerrar">✕</button>
+            <img id="modal-foto" class="modal__foto" src="" alt="">
+            <div class="modal__barra">
+                <p id="modal-titulo" class="modal__titulo"></p>
+                <button type="button" class="modal__boton">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -185,5 +212,6 @@
   <!-- JAVA SCRIPT Y JQUERY -->
    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
    <script src="js/script.js"></script>
+   <script src="js/vinilos.js"></script>
 </body>
 </html>
