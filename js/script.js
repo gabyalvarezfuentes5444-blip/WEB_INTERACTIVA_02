@@ -107,3 +107,4 @@ botonPrev.on("click", function () {
     anterior();
     pausar();
 });
+

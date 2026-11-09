@@ -178,3 +178,17 @@ $("#modal").on("click", function (event) {
         $("#modal").removeClass("is-abierta");
     }
 });
+
+// CORAZÓN 
+$(document).on("click", ".disco__favorito", function () {
+
+    $(this).toggleClass("is-favorito");
+    $(this).find("i").toggleClass("fa-regular fa-solid");
+
+    if ($(".disco__favorito.is-favorito").length > 0) {
+        $("#carpeta-favoritos").fadeIn(200);
+    } else {
+        $("#carpeta-favoritos").fadeOut(200);
+    }
+
+});
