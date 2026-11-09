@@ -136,3 +136,45 @@ $(".filtro").on("click", function () {
     $(this).addClass("is-activo");
 
 });
+
+
+// CORAZON ME GUSTA
+
+
+$("#discos").on("click", ".disco__favorito", function () {
+
+    $(this).toggleClass("is-favorito");                   // se pone verde
+    $(this).find("i").toggleClass("fa-regular fa-solid"); // de vacío a relleno
+
+});
+
+// VENTANA MODAL
+
+// Abrir al pulsar "Ver más"
+$("#discos").on("click", ".disco__boton", function () {
+
+    // Sabemos qué disco es por su data-indice
+    var indice = $(this).attr("data-indice");
+    var disco = discos[indice];
+
+    // Metemos sus datos en la modal
+    $("#modal-foto").attr("src", disco.foto);
+    $("#modal-foto").attr("alt", disco.nombre);
+    $("#modal-titulo").text(disco.nombre + " - " + disco.artista);
+
+    // La enseñamos
+    $("#modal").addClass("is-abierta");
+
+});
+
+// Cerrar con la X
+$("#modal-cerrar").on("click", function () {
+    $("#modal").removeClass("is-abierta");
+});
+
+// Cerrar al hacer clic en el fondo oscuro
+$("#modal").on("click", function (event) {
+    if (event.target === this) {
+        $("#modal").removeClass("is-abierta");
+    }
+});
