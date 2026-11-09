@@ -239,6 +239,32 @@ body {
     font-size: 0.8rem;
 }
 
+    /* Mapa */
+.acordeon__contenido--mapa {
+    padding: 0;                    /* el mapa va pegado al borde, sin margen */
+}
+
+.mapa {
+    display: flex;
+}
+
+.mapa__iframe {
+    width: 60%;
+    height: 25rem;
+    border: none;
+}
+
+.mapa__texto {
+    width: 40%;
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+}
+
+.mapa__texto p {
+    margin-bottom: 1.2rem;
+    max-width: 20rem;
+}
+
 /* FORMULARIO */
 
 /* FORMULARIO */
@@ -540,6 +566,25 @@ body {
     .acordeon__contenido {
         padding: 0 1rem 1rem;
         font-size: 0.7rem;
+    }
+
+        /* mapa */
+        
+    .mapa {
+        flex-direction: column;
+    }
+
+    .mapa__iframe,
+    .mapa__texto {
+        width: 100%;
+    }
+
+    .mapa__iframe {
+        height: 15rem;
+    }
+
+    .mapa__texto {
+        padding: 1rem;
     }
 
     /* Formulario */
