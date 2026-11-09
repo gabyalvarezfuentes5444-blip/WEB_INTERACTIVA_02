@@ -732,6 +732,30 @@ body {
         padding: 5rem 8%;
     }
 
+    /* Slider */
+        
+    .slider__flecha--anterior {
+        left: 4%;
+    }
+
+    .slider__flecha--siguiente {
+        right: 4%;
+    }
+
+    /* Vinilos */
+
+    .vinilos {
+        padding: 4rem 5%;
+    }
+
+    .discos {
+        gap: 3rem 1.5rem;
+    }
+
+    .disco__portada {
+        width: 9rem;
+    }
+
 }
 
     /* CELULAR */
@@ -831,6 +855,48 @@ body {
     .contacto__check {
         font-size: 0.6rem;
         max-width: 12rem;
+    }
+
+    /* Slider */
+
+    .slider__flecha {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Vinilos */
+    
+    .vinilos {
+        padding: 3rem 1.5rem;
+    }
+
+    .filtros {
+        gap: 1.2rem;
+    }
+
+    .filtro {
+        font-size: 0.9rem;
+    }
+
+    .vinilos__contador {
+        margin: 1rem 0 2.5rem;
+    }
+
+    /* Un disco por fila */
+    .discos {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .disco__portada {
+        width: 11rem;
+    }
+
+    /* Modal */
+    .modal__foto {
+        height: 13rem;
+        padding: 1.5rem 1rem 0.5rem;
     }
 
 }
