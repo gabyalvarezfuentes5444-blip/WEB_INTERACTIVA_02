@@ -452,6 +452,13 @@ body {
 }
 
 
+/* ARTISTAS Y EVENTOS */
+
+.franja__pista {
+    display: flex;
+    width: max-content;
+}
+
 /* RESPONSIVE */
 
     /* TABLET */
