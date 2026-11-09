@@ -713,6 +713,24 @@ body {
     display: block;
 }
 
+/* CORAZON FLOTANTE  */
+
+/* BOTÓN FLOTANTE LIKES */
+.btn-flotante-fav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 60%;
+    width: 2.6rem;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    text-align: center;
+    background: var(--color-oscuro);
+    color: var(--color-acento);
+    font-size: 1.1rem;
+    z-index: 90;
+}
+
 
 
 /* RESPONSIVE */
