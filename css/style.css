@@ -1,4 +1,3 @@
-/* RESET BASICO  */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +5,6 @@
 }
 
 /* TIPOGRAFIA_GOOGLEFONTS */
-
 /* VARIABLES */
 :root {
     --color-acento: #19E631;
@@ -17,6 +15,9 @@
     --bold: 700;
     --black: 900;
 }
+
+
+
 
 /* GENERAL */
 body {
@@ -45,7 +46,7 @@ body {
     font-size: 0.75rem;
 }
 
-    /* ANIMACION DE LA CINTA */
+/* ANIMACION DE LA CINTA */
 @keyframes desplazar {
     from {
         transform: translateX(0);
@@ -147,7 +148,6 @@ body {
     display: none;
 }
 
-/* HERO */
 
 /* HERO */
 .hero {
@@ -187,24 +187,174 @@ body {
     outline: 2px solid var(--color-oscuro);
 }
 
-/* ACORDEON */
-.acordeon {
-    background: var(--color-acento);
-    border-top: 2px solid var(--color-oscuro);
+
+/* MERCH */
+.merch {
+    padding: 4rem 7.5rem 6rem 7.5rem;
+    background-color: var(--color-claro);
+    text-align: center;
 }
 
 .acordeon__item {
     border-bottom: 2px solid var(--color-oscuro);
 }
 
-.acordeon__titulo {
+.merch__titulo {
+    font-size: 0.9rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.4rem;
+}
+
+.merch__subtitulo {
+    font-size: 0.7rem;
+    color: #555555;
+}
+
+
+/* 3 columnas */
+.merch__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 68rem;
+    margin: 0 auto;
+    align-items: stretch; 
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* fotos con flechas verdes */
+.producto__visor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     display: flex;
-    justify-content: space-between;   /* texto a la izquierda, flecha a la derecha */
+    justify-content: space-between;
     align-items: center;
     background: none;
     border: none;
     padding: 0.875rem 2rem;
+    justify-content: center;
+}
+
+.visor__img {
+    display: none;
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.visor__img.activa {
+    display: block;
+}
+
+.visor__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.visor__btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.visor__btn--prev {
+    left: 0;
+}
+
+.visor__btn--next {
+    right: 0;
+}
+
+
+/* textos y botones de cada camiseta */
+.producto__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 15rem;
+    width: 100%;
+    flex: 1;
+}
+
+.producto__nombre {
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.15rem;
+}
+
+.producto__tipo {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
+}
+
+
+/* Corazón de favorito */
+.btn-fav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0;
+}
+
+.btn-fav i {
+    color: #ffffff;
+    -webkit-text-stroke: 1.2px #000000;
+    transition: color 0.2s ease;
+}
+
+.btn-fav i.activo {
+    color: var(--color-acento) !important;
+    -webkit-text-stroke: 0px transparent;
+}
+
+
+/* descripción del producto */
+.producto__desc {
+    font-size: 0.65rem;
+    line-height: 1.35;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+
+/* talla */
+.producto__talla {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 1.4rem;
+    font-size: 0.7rem;
+}
+
+.producto__talla select {
+    border: 1px solid var(--color-oscuro);
+    background-color: transparent;
+    padding: 0.15rem 0.4rem;
     font-family: inherit;
     font-size: 0.8rem;
     color: var(--color-oscuro);
@@ -241,7 +391,7 @@ body {
 
     /* Mapa */
 .acordeon__contenido--mapa {
-    padding: 0;                    /* el mapa va pegado al borde, sin margen */
+    padding: 0;
 }
 
 .mapa {
@@ -265,7 +415,6 @@ body {
     max-width: 20rem;
 }
 
-/* FORMULARIO */
 
 /* FORMULARIO */
 .contacto {
@@ -296,6 +445,12 @@ body {
     height: 1.8rem;
     border: 1px solid var(--color-oscuro);
     background: transparent;
+}
+
+/* añadir a la cesta */
+.producto__boton {
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
     font-family: inherit;
     font-size: 0.8rem;
     padding: 0 0.5rem;
@@ -303,7 +458,7 @@ body {
 
 .contacto__campo textarea {
     padding-top: 0.3rem;
-    resize: vertical;          /* Esto hace que se estire si se escribe mas de lo que se espera */
+    resize: vertical;
 }
 
 /* Casilla de condiciones */
@@ -352,9 +507,34 @@ body {
     color: var(--color-acento);
 }
 
+.anadido {
+    background-color: var(--color-oscuro) !important;
+    color: var(--color-acento) !important;
+}
 
-/* BOTON FLOTANTE VERDE */
 
+
+/* BOTONES FLOTANTES */
+/* Cuadrado negro con corazón */
+.btn-flotante-fav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+
+
+/* Botón redondo verde que lleva a la Home */
 .btn-flotante-home {
     position: fixed;
     right: 2.5rem;
@@ -381,6 +561,263 @@ body {
     object-fit: contain;
     display: block;
 }
+
+
+
+
+/* EVENTOS Y ARTISTAS */
+html {
+    scroll-behavior: smooth;
+}
+
+/* TIRA DE FOTOS ALARGADAS */
+.tira-artistas {
+    width: 100%;
+    height: 32rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    overflow: hidden;
+    background-color: var(--color-oscuro);
+}
+
+.tira-artistas__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tira-artistas__item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.tira-artistas__item img.activa {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+/* Hover */
+.tira-artistas__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.tira-artistas__item--barry:hover .tira-artistas__overlay {
+    opacity: 1;
+}
+
+.eventos {
+    padding: 4.5rem 7.5rem 11rem 7.5rem;
+    background-color: var(--color-claro);
+    text-align: center;
+}
+
+.evento-card {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.evento-card__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Botón ver y comprar */
+.btn-verde-peq {
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: var(--bold);
+    padding: 0.45rem 1.2rem;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-verde-peq:hover {
+    transform: scale(1.06);
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+}
+
+
+/* FILTROS */
+.eventos {
+    padding: 4.5rem 7.5rem 6rem 7.5rem;
+    background-color: var(--color-claro);
+    text-align: center;
+}
+
+.eventos__cabecera {
+    margin-bottom: 3rem;
+}
+
+.eventos__filtros {
+    display: flex;
+    justify-content: center;
+    gap: 2.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.filtro-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: var(--bold);
+    color: var(--color-oscuro);
+    cursor: pointer;
+    padding-bottom: 0.15rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.filtro-btn.activo,
+.filtro-btn:hover {
+    border-bottom: 2px solid var(--color-oscuro);
+}
+
+.eventos__subtitulo {
+    font-size: 0.7rem;
+    color: #555555;
+}
+
+
+/* 3 columnas */
+.eventos__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 62rem;
+    margin: 0 auto;
+}
+
+.evento-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background-color: #e0e0e0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.evento-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Capa oscura hover */
+.evento-card__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.evento-card:hover .evento-card__overlay {
+    opacity: 1;
+}
+
+
+/* Corazón */
+.btn-fav--evento {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.85rem;
+    z-index: 5;
+    font-size: 0.9rem;
+}
+
+
+
+/* VENTANA MODAL evento */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(240, 240, 240, 0.88);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.modal-caja {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 21rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-oscuro);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-poster-jpg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-btn-cesta {
+    width: 100%;
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+    border: none;
+    padding: 0.95rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-btn-cesta:hover {
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+}
+
+
+
 
 /* FOOTER ESCRITORIO */
 .footer {
@@ -426,6 +863,7 @@ body {
 .footer__lista a:hover {
     color: var(--color-acento);
 }
+
 
 /* Parte inferior del footer */
 .footer__inferior {
@@ -478,6 +916,8 @@ body {
 }
 
 
+
+
 /* RESPONSIVE */
 
     /* TABLET */
@@ -497,8 +937,49 @@ body {
 
 }
 
-    /* CELULAR */
 
+/* RESPONSIVE PARA EVENTOS (TABLET Y MÓVIL) */
+@media (max-width: 1024px) {
+    .tira-artistas {
+        height: 24rem;
+    }
+
+    .eventos {
+        padding: 3.5rem 3.5rem 5rem 3.5rem;
+    }
+
+    /* 2 columnas en Tablet */
+    .eventos__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .tira-artistas__item--barry .tira-artistas__overlay,
+    .evento-card .evento-card__overlay {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media (max-width: 600px) {
+    .tira-artistas {
+        height: 18rem;
+    }
+
+    .eventos {
+        padding: 3rem 2rem 4rem 2rem;
+    }
+
+    /* 1 columna en Móvil */
+    .eventos__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 20rem;
+    }
+}
+
+
+/* MÓVIL */
 @media (max-width: 600px) {
 
     /* Cinta */
@@ -568,8 +1049,7 @@ body {
         font-size: 0.7rem;
     }
 
-        /* mapa */
-        
+    /* mapa */
     .mapa {
         flex-direction: column;
     }
