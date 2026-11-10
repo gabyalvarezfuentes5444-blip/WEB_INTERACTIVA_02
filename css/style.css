@@ -384,6 +384,11 @@ body {
     color: var(--color-acento);
 }
 
+.anadido {
+    background-color: var(--color-oscuro) !important;
+    color: var(--color-acento) !important;
+}
+
 
 
 /* BOTONES FLOTANTES */
