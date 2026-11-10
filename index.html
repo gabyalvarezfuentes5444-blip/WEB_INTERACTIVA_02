@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistas y Eventos</title>
+    <!-- TIPOGRAFIA -->
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+     <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ICONOS FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- CINTA DE AVISOS -->
+     <div class="cinta">
+        <div class="cinta-texto">
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+            <span>FIRMA DE DISCOS BARRYB SÁBADO 7/10/26 - 7PM</span>
+        </div>
+     </div>
+
+     <!-- HEADER -->
+
+     <header class="cabecera">
+
+        <a href="#" class="cabecera__logo">
+            <img src="MEDIA/IMG/Logo.png" alt="">
+        </a>
+
+        <nav class="menu">
+
+            <!-- Tienda: funciona como un item de acordeón -->
+            <div class="menu__item">
+                <button type="button" class="menu__titulo">
+                    Tienda 
+                </button>
+                <div class="menu__contenido">
+                    <a href="vinilos.html">Vinilos</a>
+                    <a href="merch.html">Merch</a>
+                </div>
+            </div>
+
+            <!-- El resto son enlaces normales -->
+            <a href="about.html" class="menu__enlace menu__enlace--activo">About</a>
+            <a href="artistas-eventos.html" class="menu__enlace">Artistas y Eventos</a>
+
+        </nav>
+
+        <div class="cabecera__iconos">
+            <a href="#"><img src="MEDIA/IMG/lupa.png" alt="Buscar"></a>
+            <a href="carrito.html"><img src="MEDIA/IMG/carrito.png" alt="Carrito"></a>
+        </div>
+
+        <!-- HAMBURGUESA -->
+        <button type="button" class="menu-btn" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+     </header>
+
+     <main>
+
+         <!-- HERO -->
+         <section class="hero">
+             <p class="hero__marca">MARILIANS</p>
+             <h1 class="hero__titulo">HEY, LET’S GO</h1>
+             <p class="hero__texto">Tienda de discos de vinilo y espacio cultural independiente situada en Madrid</p>
+             <a href="#fundadores" class="hero__boton">¿Quiénes somos?</a>
+         </section>
+         
+         <!-- SLIDER -->
+         <section class="slider">
+     
+             <div class="slide"><img src="MEDIA/IMG/tienda1.png" alt="Tienda Marilians"></div>
+             <div class="slide"><img src="MEDIA/IMG/tienda2.png" alt="Tienda Marilians"></div>
+             <div class="slide"><img src="MEDIA/IMG/tienda3.png" alt="Tienda Marilians"></div>
+             <div class="slide"><img src="MEDIA/IMG/tienda4.png" alt="Tienda Marilians"></div>
+             <div class="slide"><img src="MEDIA/IMG/tienda5.png" alt="Tienda Marilians"></div>
+             <div class="slide"><img src="MEDIA/IMG/tienda6.png" alt="Tienda Marilians"></div>
+             <div class="slide"><img src="MEDIA/IMG/tienda7.png" alt="Tienda Marilians"></div>
+     
+             <button type="button" id="anterior" class="slider__flecha slider__flecha--anterior">
+                 <i class="fa-solid fa-chevron-left"></i>
+             </button>
+             <button type="button" id="siguiente" class="slider__flecha slider__flecha--siguiente">
+                 <i class="fa-solid fa-chevron-right"></i>
+             </button>
+     
+         </section>
+     
+         
+         <!-- VINILOS -->
+         <section class="vinilos">
+     
+             <div class="filtros">
+                 <button type="button" class="filtro is-activo" data-tipo="Todos">Todos</button>
+                 <button type="button" class="filtro" data-tipo="Nacional">Nacional</button>
+                 <button type="button" class="filtro" data-tipo="Internacional">Internacional</button>
+             </div>
+     
+             <p id="contador" class="vinilos__contador"></p>
+     
+             <!-- Aquí el JS pinta los discos -->
+             <div id="discos" class="discos"></div>
+     
+         </section>
+     
+         <!-- MODAL DE DISCO -->
+         <div id="modal" class="modal">
+             <div class="modal__caja">
+                 <button type="button" id="modal-cerrar" class="modal__cerrar">✕</button>
+                 <img id="modal-foto" class="modal__foto" src="" alt="">
+                 <div class="modal__barra">
+                     <p id="modal-titulo" class="modal__titulo"></p>
+                     <button type="button" class="modal__boton">Añadir al carrito</button>
+                 </div>
+             </div>
+         </div>
+    
+         <!-- CORAZON FLOTANTE  -->
+    
+        <a href="#" id="carpeta-favoritos" class="btn-flotante-fav">
+            <i class="fa-solid fa-heart"></i>
+        </a>
+
+        <!-- AVISO DE COOKIES -->
+        <div id="cookies" class="cookies">
+            <p class="cookies__texto">
+                En esta web utilizamos cookies para que tu experiencia sea lo mejor posible. Utilizamos cookies propias y de terceros para fines analíticos y recordar tus preferencias y mostrarte publicidad en base a un perfil generado a partir de tus hábitos de navegación. Puedes aceptarlas todas o elegir tu configuración. Para más información puedes consultar nuestra Política de uso de cookies.
+            </p>
+
+            <div class="cookies__botones">
+                <a href="#" class="cookies__enlace">Administrar preferencias</a>
+                <button type="button" id="cookies-aceptar" class="cookies__boton">Aceptar</button>
+                <button type="button" id="cookies-rechazar" class="cookies__boton">Rechazar</button>
+            </div>
+        </div>
+
+        <!-- BOTÓN FLOTANTE DE IR A LA HOME -->
+        <a href="index.html" class="btn-flotante-home" aria-label="Ir a la Home">
+            <img src="MEDIA/IMG/Logo verde.png" alt="Home">
+        </a>
+
+     </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+    <!-- 4 Columnas -->
+    <div class="footer__columnas">
+        
+        <div class="footer__col">
+            <h3 class="footer__titulo">Productos</h3>
+            <ul class="footer__lista">
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Nacional</a></li>
+                <li><a href="#">Internacional</a></li>
+                <li><a href="merch.html">Merchandising</a></li>
+                <li><a href="#">RSD</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h3 class="footer__titulo">Nuestra empresa</h3>
+            <ul class="footer__lista">
+                <li><a href="#">Envío</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Cambios y devoluciones</a></li>
+                <li><a href="#">Contacte con nosotros</a></li>
+                <li><a href="#">Mapa del sitio</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h3 class="footer__titulo">Su cuenta</h3>
+            <ul class="footer__lista">
+                <li><a href="#">Seguimiento del pedido</a></li>
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Crear una cuenta</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h3 class="footer__titulo">Información de la tienda</h3>
+            <p class="footer__info">
+                Marilians Records<br>
+                España
+            </p>
+        </div>
+    </div>
+
+    <div class="footer__inferior">
+        <div class="footer__centro">
+            <div class="footer__redes">
+                <a href="https://www.facebook.com/mariliansrecords/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/marilians_records/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@marilians_records" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/MariliansR" target="_blank" rel="noopener noreferrer" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://open.spotify.com/user/dfores78" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+                    <i class="fa-brands fa-spotify"></i>
+                </a>
+            </div>
+            <p class="footer__copy">© 2026 - Marilians Records SL</p>
+        </div>
+
+        <!-- Logo -->
+        <a href="index.html" class="footer__isotipo">
+            <img src="MEDIA/IMG/Logo footer.png" alt="Marilians">
+        </a>
+    </div>
+    </footer>
+
+
+
+
+
+  <!-- JAVA SCRIPT Y JQUERY -->
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <script src="js/script.js"></script>
+   <script src="js/vinilos.js"></script>
+</body>
+</html>

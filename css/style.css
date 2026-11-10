@@ -382,6 +382,329 @@ body {
     display: block;
 }
 
+
+/* HOME  */
+
+    /* SLIDER */
+
+.slider {
+    position: relative;
+    height: 53vw;      
+    overflow: hidden;
+}
+
+/* Aqui las fotos estan encima de cada una */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* La primera se ve al cargar la página */
+.slide:first-child {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+    display: block;
+}
+
+/* Flechas verdes redondas */
+.slider__flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);   
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+    cursor: pointer;
+    z-index: 2;         
+}
+
+.slider__flecha--anterior {
+    left: 7%;
+}
+
+.slider__flecha--siguiente {
+    right: 7%;
+}
+
+    /* VINILOS */
+
+.vinilos {
+    padding: 5rem 8%;
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.filtro {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: var(--bold);
+    color: var(--color-oscuro);
+    cursor: pointer;
+}
+
+.filtro:focus {
+    outline: none;
+}
+
+/* El filtro activo y el que tiene el ratón encima, subrayados */
+.filtro.is-activo,
+.filtro:hover {
+    text-decoration: underline;
+}
+
+/* Contador */
+.vinilos__contador {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 1.5rem 0 4rem;
+}
+
+/* Cuadrícula: 3 discos por fila */
+.discos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 3rem;              
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+/* Cada disco */
+.disco {
+    max-width: 13rem;
+    margin: 0 auto;
+}
+
+.disco__portada {
+    position: relative;          
+    width: 11rem;
+    margin: 0 auto;
+}
+
+.disco__portada img {
+    width: 100%;
+    display: block;
+    animation: girar 8s linear infinite;   
+}
+
+        /* Animación de giro */
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.disco__boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-oscuro);
+    color: var(--color-acento);
+    border: none;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background 0.3s, color 0.3s;
+}
+
+/* Aparece al pasar el ratón por el vinilo */
+.disco__portada:hover .disco__boton {
+    opacity: 1;
+}
+
+/* Al pasar el ratón por el botón, se pone verde con letra negra */
+.disco__boton:hover {
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+}
+
+/* Nombre del disco + corazón */
+.disco__titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0 1.2rem;
+}
+
+.disco__titulo h3 {
+    font-size: 0.9rem;
+    font-weight: var(--bold);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Corazón: vacío y negro; verde cuando te gusta */
+.disco__favorito {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    color: var(--color-oscuro);
+    cursor: pointer;
+}
+
+.disco__favorito.is-favorito {
+    color: var(--color-acento);
+}
+
+/* Tracklist */
+.disco__tracklist-titulo,
+.disco__tracklist {
+    font-size: 0.65rem;
+    line-height: 1.4;
+}
+
+.disco__tracklist {
+    list-style-position: inside;   /* los números "1." pegados al texto */
+}
+
+
+        /* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;               /* tapa toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cuando el JS le pone esta clase, se ve */
+.modal.is-abierta {
+    display: flex;
+}
+
+.modal__caja {
+    position: relative;
+    width: 30rem;
+    max-width: 90%;
+    background: #fff;
+}
+
+.modal__cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.7rem;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.modal__foto {
+    width: 100%;
+    height: 18rem;
+    object-fit: contain;
+    padding: 2rem 2rem 1rem;
+    display: block;
+}
+
+.modal__barra {
+    background: var(--color-acento);
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.modal__titulo {
+    font-size: 0.8rem;
+    font-weight: var(--bold);
+    margin-bottom: 0.5rem;
+}
+
+.modal__boton {
+    background: var(--color-oscuro);
+    color: var(--color-acento);
+    border: none;
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+}
+
+
+/* AVISO DE COOKIES */
+.cookies {
+    display: none;                 /* escondido hasta que lo enseñe el JS */
+    position: fixed;             
+    left: 2%;
+    right: 2%;
+    bottom: 1.5rem;
+    background: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: 2rem 3rem;
+    z-index: 95;
+    justify-content: space-between;   
+    align-items: center;              
+    gap: 3rem;     
+}
+
+.cookies__texto {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    max-width: 42rem;
+}
+
+.cookies__botones {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.cookies__enlace {
+    color: var(--color-claro);
+    font-size: 0.7rem;
+    text-align: center;
+    max-width: 6rem;              
+}
+
+.cookies__boton {
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+    border: none;
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+}
+
+.cookies__boton:hover {
+    background: var(--color-claro);
+}
+
+
+
+
 /* FOOTER ESCRITORIO */
 .footer {
     background-color: var(--color-oscuro);
@@ -477,6 +800,25 @@ body {
     display: block;
 }
 
+/* CORAZON FLOTANTE  */
+
+/* BOTÓN FLOTANTE LIKES */
+.btn-flotante-fav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 60%;
+    width: 2.6rem;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    text-align: center;
+    background: var(--color-oscuro);
+    color: var(--color-acento);
+    font-size: 1.1rem;
+    z-index: 90;
+}
+
+
 
 /* RESPONSIVE */
 
@@ -493,6 +835,30 @@ body {
 
     .contacto {
         padding: 5rem 8%;
+    }
+
+    /* Slider */
+        
+    .slider__flecha--anterior {
+        left: 4%;
+    }
+
+    .slider__flecha--siguiente {
+        right: 4%;
+    }
+
+    /* Vinilos */
+
+    .vinilos {
+        padding: 4rem 5%;
+    }
+
+    .discos {
+        gap: 3rem 1.5rem;
+    }
+
+    .disco__portada {
+        width: 9rem;
     }
 
 }
@@ -613,6 +979,60 @@ body {
     .contacto__check {
         font-size: 0.6rem;
         max-width: 12rem;
+    }
+
+    /* Slider */
+
+    .slider__flecha {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Vinilos */
+    
+    .vinilos {
+        padding: 3rem 1.5rem;
+    }
+
+    .filtros {
+        gap: 1.2rem;
+    }
+
+    .filtro {
+        font-size: 0.9rem;
+    }
+
+    .vinilos__contador {
+        margin: 1rem 0 2.5rem;
+    }
+
+    /* Un disco por fila */
+    .discos {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .disco__portada {
+        width: 11rem;
+    }
+
+    /* Modal */
+    .modal__foto {
+        height: 13rem;
+        padding: 1.5rem 1rem 0.5rem;
+    }
+
+    /* Cookies */
+    .cookies {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .cookies__botones {
+        flex-wrap: wrap;
     }
 
 }
