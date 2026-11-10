@@ -187,6 +187,12 @@ body {
     outline: 2px solid var(--color-oscuro);
 }
 
+/* ACORDEON */
+.acordeon {
+    background: var(--color-acento);
+    border-top: 2px solid var(--color-oscuro);
+}
+
 
 /* MERCH */
 .merch {
