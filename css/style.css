@@ -476,6 +476,17 @@ body {
 .disco__portada img {
     width: 100%;
     display: block;
+    animation: girar 8s linear infinite;   
+}
+
+        /* Animación de giro */
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -613,6 +624,56 @@ body {
     font-size: 0.7rem;
     padding: 0.4rem 1rem;
     cursor: pointer;
+}
+
+
+/* AVISO DE COOKIES */
+.cookies {
+    display: none;                 /* escondido hasta que lo enseñe el JS */
+    position: fixed;             
+    left: 2%;
+    right: 2%;
+    bottom: 1.5rem;
+    background: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: 2rem 3rem;
+    z-index: 95;
+    justify-content: space-between;   
+    align-items: center;              
+    gap: 3rem;     
+}
+
+.cookies__texto {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    max-width: 42rem;
+}
+
+.cookies__botones {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.cookies__enlace {
+    color: var(--color-claro);
+    font-size: 0.7rem;
+    text-align: center;
+    max-width: 6rem;              
+}
+
+.cookies__boton {
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+    border: none;
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+}
+
+.cookies__boton:hover {
+    background: var(--color-claro);
 }
 
 
@@ -915,6 +976,18 @@ body {
     .modal__foto {
         height: 13rem;
         padding: 1.5rem 1rem 0.5rem;
+    }
+
+    /* Cookies */
+    .cookies {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .cookies__botones {
+        flex-wrap: wrap;
     }
 
 }

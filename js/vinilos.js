@@ -138,15 +138,6 @@ $(".filtro").on("click", function () {
 });
 
 
-// CORAZON ME GUSTA
-
-
-$("#discos").on("click", ".disco__favorito", function () {
-
-    $(this).toggleClass("is-favorito");                   // se pone verde
-    $(this).find("i").toggleClass("fa-regular fa-solid"); // de vacío a relleno
-
-});
 
 // VENTANA MODAL
 
@@ -191,4 +182,17 @@ $(document).on("click", ".disco__favorito", function () {
         $("#carpeta-favoritos").fadeOut(200);
     }
 
+});
+
+
+// COOKIES
+
+// Aparece medio segundo después de entrar
+setTimeout(function () {
+    $("#cookies").fadeIn().css("display", "flex");
+}, 700);
+
+// Se va al pulsar Aceptar o Rechazar
+$("#cookies-aceptar, #cookies-rechazar").on("click", function () {
+    $("#cookies").fadeOut();
 });
