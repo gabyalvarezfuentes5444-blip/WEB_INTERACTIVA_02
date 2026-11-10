@@ -1,4 +1,3 @@
-/* RESET BASICO  */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +6,8 @@
 
 
 
-/* TIPOGRAFIA_GOOGLEFONTS */
-/* VARIABLES */
+
+/* TIPOGRAFIA */
 :root {
     --color-acento: #19E631;
     --color-oscuro: #000000;
@@ -19,6 +18,9 @@
     --black: 900;
 }
 
+
+
+
 /* GENERAL */
 body {
     font-family: var(--tipografia);
@@ -26,6 +28,7 @@ body {
     background: var(--color-claro);
     color: var(--color-oscuro);
 }
+
 
 
 
@@ -48,7 +51,7 @@ body {
     font-size: 0.75rem;
 }
 
-    /* ANIMACION DE LA CINTA */
+/* ANIMACION DE LA CINTA */
 @keyframes desplazar {
     from {
         transform: translateX(0);
@@ -57,6 +60,7 @@ body {
         transform: translateX(-50%);
     }
 }
+
 
 
 
@@ -84,6 +88,7 @@ body {
     width: 1.1rem;
     display: block;
 }
+
 
 
 
@@ -193,7 +198,7 @@ body {
 
 
 
-/* MERCHANDISING */
+/* MERCH */
 .merch {
     padding: 4rem 7.5rem 6rem 7.5rem;
     background-color: var(--color-claro);
@@ -215,6 +220,7 @@ body {
     color: #555555;
 }
 
+
 /* 3 columnas */
 .merch__grid {
     display: grid;
@@ -230,6 +236,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 
 /* fotos con flechas verdes */
 .producto__visor {
@@ -292,6 +299,7 @@ body {
     right: 0;
 }
 
+
 /* textos y botones de cada camiseta */
 .producto__info {
     display: flex;
@@ -316,6 +324,7 @@ body {
     margin-bottom: 0.8rem;
 }
 
+
 /* Corazón de favorito */
 .btn-fav {
     background: none;
@@ -336,6 +345,7 @@ body {
     -webkit-text-stroke: 0px transparent;
 }
 
+
 /* descripción del producto */
 .producto__desc {
     font-size: 0.65rem;
@@ -343,6 +353,7 @@ body {
     margin-bottom: 1.5rem;
     flex-grow: 1;
 }
+
 
 /* talla */
 .producto__talla {
@@ -364,6 +375,7 @@ body {
     cursor: pointer;
     outline: none;
 }
+
 
 /* añadir a la cesta */
 .producto__boton {
@@ -391,8 +403,9 @@ body {
 
 
 
+
 /* BOTONES FLOTANTES */
-/* Cuadrado negro con corazón verde */
+/* Cuadrado negro con corazón */
 .btn-flotante-fav {
     display: none;
     position: fixed;
@@ -409,6 +422,7 @@ body {
     text-decoration: none;
     z-index: 100;
 }
+
 
 /* Botón redondo verde que lleva a la Home */
 .btn-flotante-home {
@@ -437,6 +451,7 @@ body {
     object-fit: contain;
     display: block;
 }
+
 
 
 
@@ -496,8 +511,6 @@ html {
     opacity: 1;
 }
 
-
-
 .eventos {
     padding: 4.5rem 7.5rem 11rem 7.5rem;
     background-color: var(--color-claro);
@@ -515,7 +528,6 @@ html {
     height: auto;
     display: block;
 }
-
 
 
 /* Botón ver y comprar */
@@ -538,6 +550,7 @@ html {
     background-color: var(--color-oscuro);
     color: var(--color-acento);
 }
+
 
 /* FILTROS */
 .eventos {
@@ -580,6 +593,7 @@ html {
     color: #555555;
 }
 
+
 /* 3 columnas */
 .eventos__grid {
     display: grid;
@@ -604,6 +618,7 @@ html {
     display: block;
 }
 
+
 /* Capa oscura hover */
 .evento-card__overlay {
     position: absolute;
@@ -620,6 +635,7 @@ html {
     opacity: 1;
 }
 
+
 /* Corazón */
 .btn-fav--evento {
     position: absolute;
@@ -628,6 +644,7 @@ html {
     z-index: 5;
     font-size: 0.9rem;
 }
+
 
 
 /* VENTANA MODAL evento */
@@ -690,47 +707,6 @@ html {
 }
 
 
-/* RESPONSIVE PARA EVENTOS (TABLET Y MÓVIL) */
-@media (max-width: 1024px) {
-    .tira-artistas {
-        height: 24rem;
-    }
-
-    .eventos {
-        padding: 3.5rem 3.5rem 5rem 3.5rem;
-    }
-
-    /* 2 columnas en Tablet */
-    .eventos__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .tira-artistas__item--barry .tira-artistas__overlay,
-    .evento-card .evento-card__overlay {
-        opacity: 1;
-        background-color: rgba(0, 0, 0, 0.25);
-    }
-}
-
-@media (max-width: 600px) {
-    .tira-artistas {
-        height: 18rem;
-    }
-
-    .eventos {
-        padding: 3rem 2rem 4rem 2rem;
-    }
-
-    /* 1 columna en Móvil */
-    .eventos__grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        max-width: 20rem;
-    }
-}
-
-
 
 
 /* FOOTER ESCRITORIO */
@@ -777,6 +753,7 @@ html {
 .footer__lista a:hover {
     color: var(--color-acento);
 }
+
 
 /* Parte inferior del footer */
 .footer__inferior {
@@ -830,6 +807,7 @@ html {
 
 
 
+
 /* RESPONSIVE */
 /* TABLET */
 @media (max-width: 1024px) {
@@ -851,6 +829,47 @@ html {
         gap: 2.5rem;
     }
 }
+
+/* RESPONSIVE PARA EVENTOS (TABLET Y MÓVIL) */
+@media (max-width: 1024px) {
+    .tira-artistas {
+        height: 24rem;
+    }
+
+    .eventos {
+        padding: 3.5rem 3.5rem 5rem 3.5rem;
+    }
+
+    /* 2 columnas en Tablet */
+    .eventos__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .tira-artistas__item--barry .tira-artistas__overlay,
+    .evento-card .evento-card__overlay {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media (max-width: 600px) {
+    .tira-artistas {
+        height: 18rem;
+    }
+
+    .eventos {
+        padding: 3rem 2rem 4rem 2rem;
+    }
+
+    /* 1 columna en Móvil */
+    .eventos__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 20rem;
+    }
+}
+
 
 /* MÓVIL */
 @media (max-width: 600px) {
