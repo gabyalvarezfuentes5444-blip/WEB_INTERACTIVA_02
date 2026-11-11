@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistas y Eventos - Marilians</title>
+    <title>Artistas y Eventos</title>
     <!-- TIPOGRAFIA -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- ICONOS FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+     <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR-->
+    <link rel="icon" type="image/png" href="MEDIA/Logo verde.png">
 </head>
 
 <body>
@@ -30,7 +36,7 @@
 
     <!-- HEADER -->
     <header class="cabecera">
-        <a href="about.html" class="cabecera__logo">
+        <a href="index.html" class="cabecera__logo">
             <img src="MEDIA/Logo.png" alt="Marilians">
         </a>
 
@@ -141,7 +147,7 @@
             <div class="eventos__grid">
                 
                 <!-- EVENTO 1: BARRY B actuales -->
-                <article class="evento-card" id="evento-barry" data-categoria="actual">
+                <article data-aos="fade-right" class="evento-card" id="evento-barry" data-categoria="actual">
                     <img src="MEDIA/barry b 2.png" alt="Barry B" class="evento-card__img">
                     <div class="evento-card__overlay">
                         <button type="button" class="btn-verde-peq" id="btn-abrir-modal">Comprar</button>
@@ -278,6 +284,8 @@
             </a>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- JQUERY Y SCRIPT -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
