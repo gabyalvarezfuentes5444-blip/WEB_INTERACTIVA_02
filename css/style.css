@@ -68,6 +68,7 @@ body {
     align-items: flex-start;
     padding: 1.8rem 7.5rem;
     background: var(--color-acento);
+    /* position: absolute; */
 }
 
 .cabecera__logo img {
@@ -95,6 +96,7 @@ body {
 }
 
 .menu__item {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -126,7 +128,11 @@ body {
 
 .menu__contenido {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     padding-top: 0.3rem;
+    z-index: 50;
 }
 
 .menu__contenido a {
@@ -1335,7 +1341,13 @@ body {
         display: none;
         width: 100%;
         padding-top: 1.5rem;
+    
     }
+
+    .menu__contenido {
+        position: static;
+    }
+    
 
     .menu > a,
     .menu__item {
