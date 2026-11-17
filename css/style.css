@@ -1524,3 +1524,79 @@ body {
     }
 
 }
+
+
+
+
+
+
+/* ARREGLOS JS */
+
+.evento-card__img {
+    position: relative;
+    z-index: 1;
+}
+
+.evento-card__overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    z-index: 4 !important;
+    transition: opacity 0.35s ease !important;
+    pointer-events: none;
+}
+
+.evento-card:hover .evento-card__overlay {
+    opacity: 1 !important;
+    pointer-events: auto;
+}
+
+.btn-fav--evento {
+    z-index: 5 !important;
+}
+
+@media (max-width: 768px) {
+    .cabecera {
+        position: relative !important;
+        align-items: center !important;
+    }
+
+    .menu-btn {
+        display: block !important;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: var(--color-oscuro);
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .menu {
+        display: none;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: var(--color-acento) !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 1rem 2rem 1.5rem 2rem !important;
+        gap: 1rem !important;
+        z-index: 100 !important;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.abierto,
+    .menu.activo {
+        display: flex !important;
+    }
+
+    .menu__contenido {
+        position: static !important;
+        padding-left: 0.8rem !important;
+    }
+}

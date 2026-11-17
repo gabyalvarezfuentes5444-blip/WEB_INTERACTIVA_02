@@ -1,10 +1,21 @@
-// MENU 
 $(document).ready(function () {
 
-    // ACORDEÓN MENÚ
+    // ACORDEÓN MENÚ Tienda
     $(".menu__titulo").on("click", function () {
         $(this).toggleClass("abierto");
         $(this).next().slideToggle("fast");
+    });
+
+    // HAMBURGUESA MÓVIL
+    $(".menu-btn").on("click", function () {
+        $(".menu").slideToggle(200).toggleClass("abierto activo");
+        $(this).toggleClass("abierto");
+    });
+
+    $(window).on("resize", function () {
+        if ($(window).width() > 768) {
+            $(".menu").removeAttr("style").removeClass("abierto activo");
+        }
     });
 
     // CORAZÓN DE FAVORITOS
@@ -18,49 +29,31 @@ $(document).ready(function () {
         }
     });
 
-    // CAMBIAR FOTO DELANTERA/TRASERA
+    // CAMBIAR FOTO DELANTERA/TRASERA DE MERCH
     $(".visor__btn").on("click", function () {
         $(this).parent().find(".visor__img").toggleClass("activa");
     });
 
-});
-
-
-    // HAMBURGUESA
-    $(".menu-btn").on("click", function () {
-
-        $(".menu").slideToggle();
-        $(this).toggleClass("abierto");
-
-    })
-
-    $(window).on("resize", function () {
-
-        if ($(window).width() > 600) {
-            $(".menu").removeAttr("style");
-        }
-
-    })
-
-
-
-    // ACORDEON
+    // ACORDEÓN ABOUT
     $(".acordeon__titulo").on("click", function () {
-
         var contenido = $(this).next();
 
-        // Cerramos los demas
         $(".acordeon__contenido").not(contenido).slideUp();
         $(".acordeon__titulo").not(this).removeClass("abierto");
 
-        // Abrimos o cerramos el que hemos pulsado
         contenido.slideToggle();
         $(this).toggleClass("abierto");
+    });
 
-    })
-
-
-
+    // PARALLAX
+    var parallax = null;
+    var imagenes = document.querySelectorAll(".parallax");
+    if (imagenes.length > 0 && typeof SimpleParallax !== "undefined") {
+        parallax = new SimpleParallax(imagenes, {
+            orientation: "up",
+            scale: 1.4
+        });
+    }
 
     // SLIDER
     var slides = $(".slide");
@@ -69,86 +62,58 @@ $(document).ready(function () {
     var total = slides.length;
     var actual = 0;
 
+    if (total > 0) {
+        function mostrar(indiceSlide) {
+            slides.eq(actual).fadeOut();
+            actual = indiceSlide;
+            slides.eq(actual).fadeIn();
 
-    // Oculta la foto actual y enseña la nueva
-    function mostrar(indiceSlide) {
-        slides.eq(actual).fadeOut();
-        actual = indiceSlide;
-        slides.eq(actual).fadeIn();
-    }
-
-
-    // Pasa a la siguiente foto (si es la última, vuelve a la primera)
-    function siguiente() {
-        var n = actual + 1;
-
-        if (n === total) {
-            n = 0;
+            if (parallax && typeof parallax.refresh === "function") {
+                parallax.refresh();
+            }
         }
 
-        mostrar(n);
-    }
-
-
-    // Pasa a la foto anterior (si es la primera, va a la última)
-    function anterior() {
-        var n = actual - 1;
-
-        if (n < 0) {
-            n = total - 1;
+        function siguiente() {
+            var n = actual + 1;
+            if (n === total) {
+                n = 0;
+            }
+            mostrar(n);
         }
 
-        mostrar(n);
+        function anterior() {
+            var n = actual - 1;
+            if (n < 0) {
+                n = total - 1;
+            }
+            mostrar(n);
+        }
+
+        var automatico = setInterval(siguiente, 3000);
+        var espera;
+
+        function pausar() {
+            clearInterval(automatico);
+            clearTimeout(espera);
+
+            espera = setTimeout(function () {
+                automatico = setInterval(siguiente, 3000);
+            }, 5000);
+        }
+
+        botonNext.on("click", function () {
+            siguiente();
+            pausar();
+        });
+
+        botonPrev.on("click", function () {
+            anterior();
+            pausar();
+        });
     }
 
-
-    // Avanza solo cada 3 segundos
-    var automatico = setInterval(siguiente, 3000);
-    var espera;
-
-
-    // Si el usuario pulsa una flecha, se para y vuelve a arrancar a los 5 segundos
-    function pausar() {
-        clearInterval(automatico);
-        clearTimeout(espera);
-
-        espera = setTimeout(function () {
-            automatico = setInterval(siguiente, 3000);
-        }, 5000);
-    }
-
-
-    // Flechas
-    botonNext.on("click", function () {
-        siguiente();
-        pausar();
-    });
-
-    botonPrev.on("click", function () {
-        anterior();
-        pausar();
-    });
-
-    // PARALLAX
-
-    var imagenes = document.querySelectorAll(".parallax");
-
-    var parallax = new SimpleParallax(imagenes, {
-        orientation: "up",
-        scale: 1.4
-    });
-
-    function mostrar(indiceSlide) {
-    slides.eq(actual).fadeOut();
-    actual = indiceSlide;
-    slides.eq(actual).fadeIn();
-
-    parallax.refresh();   
-    }
-
-
-    // CAMBIO DE FOTOS ALARGADAS TRANSICIÓN
-    var $columnas = $(".tira-artistas__item").not(".tira-artistas__item--barry");
+    // CAMBIO DE FOTOS ALARGADAS 
+    var $columnas = $(".tira-artistas__item");
     var indiceColumna = 0;
 
     if ($columnas.length > 0) {
@@ -172,7 +137,7 @@ $(document).ready(function () {
         }, 2500);
     }
 
-    // FILTROS DE EVENTOS 
+    // FILTROS DE EVENTOS
     $(".filtro-btn").on("click", function () {
         $(".filtro-btn").removeClass("activo");
         $(this).addClass("activo");
@@ -193,9 +158,9 @@ $(document).ready(function () {
         }
     });
 
-
-    // VENTANA MODAL DE BARRY 
-    $("#btn-abrir-modal").on("click", function () {
+    // VENTANA MODAL DE BARRY B
+    $(document).on("click", "#btn-abrir-modal, #evento-barry .btn-verde-peq", function (e) {
+        e.preventDefault();
         $("#modal-barry").css("display", "flex").hide().fadeIn(200);
     });
 
@@ -209,18 +174,38 @@ $(document).ready(function () {
         }
     });
 
+    // CONTADOR DEL CARRITO Y BOTÓN AÑADIR A LA CESTA
+    var cantidadCarrito = parseInt(sessionStorage.getItem("contadorMarilians")) || 0;
 
-    // BOTÓN AÑADIR A LA CESTA
+    if ($(".carrito-contador").length === 0) {
+        $(".cabecera__iconos").append('<span class="carrito-contador"></span>');
+    }
+
+    function pintarContador() {
+        if (cantidadCarrito > 0) {
+            $(".carrito-contador").text(cantidadCarrito).css("display", "inline-flex");
+        } else {
+            $(".carrito-contador").hide();
+        }
+    }
+
+    pintarContador();
+
     $(document).on("click", "#btn-anadir-modal, .modal-btn-cesta, .btn-cesta, .producto__boton, button, a", function (e) {
         var $boton = $(this);
         var textoActual = $boton.text().trim();
 
-        if ($boton.is("#btn-anadir-modal, .modal-btn-cesta") || textoActual === "Añadir a la cesta") {
+        if ($boton.is("#btn-anadir-modal, .modal-btn-cesta, .btn-cesta, .producto__boton") || textoActual === "Añadir a la cesta") {
             e.preventDefault();
+
+            if (!$boton.hasClass("anadido")) {
+                cantidadCarrito++;
+                sessionStorage.setItem("contadorMarilians", cantidadCarrito);
+                pintarContador();
+            }
 
             $boton.text("¡Añadido a la cesta!").addClass("anadido");
 
-            
             if ($boton.closest("#modal-barry").length > 0) {
                 setTimeout(function () {
                     $("#modal-barry").fadeOut(200, function () {
@@ -228,7 +213,6 @@ $(document).ready(function () {
                     });
                 }, 900);
             } else {
-               
                 setTimeout(function () {
                     $boton.text("Añadir a la cesta").removeClass("anadido");
                 }, 1200);
@@ -236,8 +220,11 @@ $(document).ready(function () {
         }
     });
 
+    // TRANSICIÓN HEY LETS GO 
+    if (typeof AOS !== "undefined") {
+        AOS.init({
+            duration: 2000
+        });
+    }
 
-    // TRANSICIÓN HEY LETS GO
-    AOS.init({
-    duration: 2000
-    });
+});
