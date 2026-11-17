@@ -129,6 +129,23 @@ $(document).ready(function () {
         pausar();
     });
 
+    // PARALLAX
+
+    var imagenes = document.querySelectorAll(".parallax");
+
+    var parallax = new SimpleParallax(imagenes, {
+        orientation: "up",
+        scale: 1.4
+    });
+
+    function mostrar(indiceSlide) {
+    slides.eq(actual).fadeOut();
+    actual = indiceSlide;
+    slides.eq(actual).fadeIn();
+
+    parallax.refresh();   
+    }
+
 
     // CAMBIO DE FOTOS ALARGADAS TRANSICIÓN
     var $columnas = $(".tira-artistas__item").not(".tira-artistas__item--barry");
